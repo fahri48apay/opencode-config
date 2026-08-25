@@ -1,0 +1,11 @@
+node_modules/
+package.json
+package-lock.json
+bun.lock
+log/
+auth.json
+local.jsonc
+*.db
+*.db-shm
+*.db-wal
+.DS_Store
