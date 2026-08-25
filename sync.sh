@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/data/data/com.termux/files/usr/bin/bash
 # Sinkronisasi config opencode antara repo ini dan lokasi live di device.
 # Pemakaian: ./sync.sh pull | push [pesan] | status [--full]
 set -euo pipefail
