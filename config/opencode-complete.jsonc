@@ -1,0 +1,384 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  
+  // MCP Servers
+  "mcp": {
+    "penpot": {
+      "type": "remote",
+      "url": "https://design.penpot.app/mcp/stream?userToken={env:PENPOT_TOKEN}",
+      "enabled": true
+    }
+  },
+
+  // Agent Configuration
+  "agents": {
+    "coding": {
+      "name": "Senior Polyglot Software Engineer",
+      "description": "Senior polyglot software engineer. Writes, debugs, and reviews code in any language; refactors; sets up new projects; handles git workflow and testing.",
+      "mode": "all",
+      "instructions": [
+        "~/opencode-config/config/agent/coding.md"
+      ],
+      "knowledgeBase": [
+        "~/coding-knowledge-base/README.md"
+      ],
+      "projectContext": {
+        "coffeeTongkrong": {
+          "handoffFile": "~/coffee-tongkrong/HANDOFF.md",
+          "tokensFile": "~/coffee-tongkrong/tokens.css",
+          "agentsFile": "~/coffee-tongkrong/AGENTS.md"
+        }
+      }
+    },
+    "ui-ux": {
+      "name": "Senior UI/UX Designer",
+      "description": "Senior UI/UX designer agent. Reviews and critiques designs, generates UI code (HTML/CSS/Tailwind/React), builds design systems, and answers UX questions.",
+      "mode": "all",
+      "instructions": [
+        "~/opencode-config/config/agent/ui-ux.md"
+      ],
+      "knowledgeBase": [
+        "~/ui-ux-knowledge-base/README.md"
+      ],
+      "projectContext": {
+        "coffeeTongkrong": {
+          "handoffFile": "~/coffee-tongkrong/HANDOFF.md",
+          "tokensFile": "~/coffee-tongkrong/tokens.css",
+          "loginFile": "~/coffee-tongkrong/login.html",
+          "demoFile": "~/coffee-tongkrong/demo.html"
+        }
+      }
+    }
+  },
+
+  // Skills Configuration
+  "skills": {
+    // Core Skills
+    "brainstorming": {
+      "name": "Brainstorming",
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior.",
+      "source": "obra/superpowers",
+      "path": "~/opencode-config/skills/brainstorming/SKILL.md"
+    },
+    "writing-plans": {
+      "name": "Writing Plans",
+      "description": "Use when you have a spec or requirements for a multi-step task, before touching code",
+      "source": "obra/superpowers",
+      "path": "~/opencode-config/skills/writing-plans/SKILL.md"
+    },
+    "executing-plans": {
+      "name": "Executing Plans",
+      "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
+      "source": "obra/superpowers",
+      "path": "~/opencode-config/skills/executing-plans/SKILL.md"
+    },
+    
+    // Testing & Verification
+    "test-driven-development": {
+      "name": "Test-Driven Development",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code",
+      "source": "obra/superpowers",
+      "path": "~/opencode-config/skills/test-driven-development/SKILL.md"
+    },
+    "verification-before-completion": {
+      "name": "Verification Before Completion",
+      "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs",
+      "source": "obra/superpowers",
+      "path": "~/opencode-config/skills/verification-before-completion/SKILL.md"
+    },
+    
+    // Code Quality
+    "requesting-code-review": {
+      "name": "Requesting Code Review",
+      "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+      "source": "obra/superpowers",
+      "path": "~/opencode-config/skills/requesting-code-review/SKILL.md"
+    },
+    "systematic-debugging": {
+      "name": "Systematic Debugging",
+      "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+      "source": "obra/superpowers",
+      "path": "~/opencode-config/skills/systematic-debugging/SKILL.md"
+    },
+    
+    // Git Workflow
+    "finishing-a-development-branch": {
+      "name": "Finishing a Development Branch",
+      "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work",
+      "source": "obra/superpowers",
+      "path": "~/opencode-config/skills/finishing-a-development-branch/SKILL.md"
+    },
+    "using-git-worktrees": {
+      "name": "Using Git Worktrees",
+      "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans",
+      "source": "obra/superpowers",
+      "path": "~/opencode-config/skills/using-git-worktrees/SKILL.md"
+    },
+    
+    // UI/UX Design
+    "frontend-design": {
+      "name": "Frontend Design",
+      "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one.",
+      "source": "anthropics/skills",
+      "path": "~/opencode-config/skills/frontend-design/SKILL.md"
+    },
+    "ui-ux-pro-max": {
+      "name": "UI/UX Pro Max",
+      "description": "UI/UX design intelligence for web, mobile, and desktop.",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": "~/opencode-config/skills/ui-ux-pro-max/SKILL.md"
+    },
+    "impeccable": {
+      "name": "Impeccable",
+      "description": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface.",
+      "source": "pbakaus/impeccable",
+      "path": "~/opencode-config/skills/impeccable/SKILL.md"
+    },
+    "emil-design-eng": {
+      "name": "Emil Design Engineering",
+      "description": "This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great.",
+      "source": "emilkowalski/skill",
+      "path": "~/opencode-config/skills/emil-design-eng/SKILL.md"
+    },
+    "ui-design": {
+      "name": "UI Design",
+      "description": "Design, build, or improve web and mobile interfaces using real product examples from UIZZE's 800,000+ web and iOS screens.",
+      "source": "uizze.com",
+      "path": "~/opencode-config/skills/ui-design/SKILL.md"
+    },
+    "ui-radar": {
+      "name": "UI Radar",
+      "description": "Find and compare real UI examples from UIZZE's 800,000+ web and iOS screens.",
+      "source": "uizze.com",
+      "path": "~/opencode-config/skills/ui-radar/SKILL.md"
+    },
+    "anti-ui-slop": {
+      "name": "Anti UI Slop",
+      "description": "Stop coding agents from shipping generic UI. Use UIZZE's 800,000+ real web and iOS screens to build product-specific interfaces.",
+      "source": "uizze.com",
+      "path": "~/opencode-config/skills/anti-ui-slop/SKILL.md"
+    },
+    "extract-design-system": {
+      "name": "Extract Design System",
+      "description": "Extract design primitives from a public website and generate starter token files for your project.",
+      "source": "arvindrk/extract-design-system",
+      "path": "~/opencode-config/skills/extract-design-system/SKILL.md"
+    },
+    "sleek-design-mobile-apps": {
+      "name": "Sleek Design Mobile Apps",
+      "description": "Use when the user wants to design a mobile app or UI screens, when they mention their Sleek (sleek.design) projects, or when implementing Sleek designs in code.",
+      "source": "sleekdotdesign/agent-skills",
+      "path": "~/opencode-config/skills/sleek-design-mobile-apps/SKILL.md"
+    },
+    "web-design-guidelines": {
+      "name": "Web Design Guidelines",
+      "description": "Review UI code for Web Interface Guidelines compliance.",
+      "source": "vercel-labs/agent-skills",
+      "path": "~/opencode-config/skills/web-design-guidelines/SKILL.md"
+    },
+    
+    // Testing & Automation
+    "playwright-best-practices": {
+      "name": "Playwright Best Practices",
+      "description": "Use when writing Playwright tests, fixing flaky tests, debugging failures, implementing Page Object Model, configuring CI/CD, optimizing performance.",
+      "source": "currents-dev/playwright-best-practices-skill",
+      "path": "~/opencode-config/skills/playwright-best-practices/SKILL.md"
+    },
+    "playwright-cli": {
+      "name": "Playwright CLI",
+      "description": "Automate browser interactions, test web pages and work with Playwright tests.",
+      "source": "microsoft/playwright-cli",
+      "path": "~/opencode-config/skills/playwright-cli/SKILL.md"
+    },
+    "webapp-testing": {
+      "name": "Webapp Testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright.",
+      "source": "anthropics/skills",
+      "path": "~/opencode-config/skills/webapp-testing/SKILL.md"
+    },
+    
+    // Architecture & Refactoring
+    "improve-codebase-architecture": {
+      "name": "Improve Codebase Architecture",
+      "description": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.",
+      "source": "mattpocock/skills",
+      "path": "~/opencode-config/skills/improve-codebase-architecture/SKILL.md"
+    },
+    
+    // React & Next.js
+    "vercel-react-best-practices": {
+      "name": "Vercel React Best Practices",
+      "description": "React and Next.js performance optimization guidelines from Vercel Engineering.",
+      "source": "vercel-labs/agent-skills",
+      "path": "~/opencode-config/skills/vercel-react-best-practices/SKILL.md"
+    },
+    "vercel-react-native-skills": {
+      "name": "Vercel React Native Skills",
+      "description": "React Native and Expo best practices for building performant mobile apps.",
+      "source": "vercel-labs/agent-skills",
+      "path": "~/opencode-config/skills/vercel-react-native-skills/SKILL.md"
+    },
+    
+    // Skill Management
+    "skill-creator": {
+      "name": "Skill Creator",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance.",
+      "source": "anthropics/skills",
+      "path": "~/opencode-config/skills/skill-creator/SKILL.md"
+    },
+    "find-skills": {
+      "name": "Find Skills",
+      "description": "Helps users discover and install agent skills when they ask questions like 'how do I do X', 'find a skill for X'.",
+      "source": "vercel-labs/skills",
+      "path": "~/opencode-config/skills/find-skills/SKILL.md"
+    },
+    
+    // Specialized Skills
+    "ralph-wiggum": {
+      "name": "Ralph Wiggum",
+      "description": "Autonomous AI coding with spec-driven development. Implements Geoffrey Huntley's iterative bash loop methodology.",
+      "source": "fstandhartinger/ralph-wiggum",
+      "path": "~/opencode-config/skills/ralph-wiggum/SKILL.md"
+    },
+    
+    // Coffee Tongkrong Specific
+    "coffee-tongkrong-coding": {
+      "name": "Coffee Tongkrong Coding",
+      "description": "Senior polyglot software engineer agent for the Coffee Tongkrong project and general coding.",
+      "source": "local",
+      "path": "~/.agents/skills/coffee-tongkrong-coding/SKILL.md"
+    },
+    "coffee-tongkrong-ui-ux": {
+      "name": "Coffee Tongkrong UI/UX",
+      "description": "Senior UI/UX designer agent for the Coffee Tongkrong project.",
+      "source": "local",
+      "path": "~/.agents/skills/coffee-tongkrong-ui-ux/SKILL.md"
+    },
+    
+    // Supabase
+    "supabase": {
+      "name": "Supabase",
+      "description": "Use when doing ANY task involving Supabase.",
+      "source": "supabase/agent-skills",
+      "path": "~/.agents/skills/supabase/SKILL.md"
+    },
+    "supabase-postgres-best-practices": {
+      "name": "Supabase Postgres Best Practices",
+      "description": "Postgres best practices maintained by Supabase, for Postgres running anywhere.",
+      "source": "supabase/agent-skills",
+      "path": "~/.agents/skills/supabase-postgres-best-practices/SKILL.md"
+    },
+    
+    // HF CLI
+    "hf-cli": {
+      "name": "HF CLI",
+      "description": "Hugging Face Hub CLI (hf) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging Face Hub.",
+      "source": "local",
+      "path": "~/.agents/skills/hf-cli/SKILL.md"
+    }
+  },
+
+  // Knowledge Base Configuration
+  "knowledgeBase": {
+    "coding": {
+      "name": "Coding Knowledge Base",
+      "description": "Hasil riset mendalam tentang cara coding dengan benar — prinsip engineering klasik + praktik resmi AI coding agent 2025–2026",
+      "path": "~/coding-knowledge-base",
+      "indexFile": "~/coding-knowledge-base/README.md",
+      "files": {
+        "prinsip-engineering": "01-prinsip-engineering.md",
+        "agent-coding-workflow": "02-agent-coding-workflow.md",
+        "testing-verifikasi": "03-testing-verifikasi.md",
+        "git-workflow": "04-git-workflow.md",
+        "keamanan": "05-keamanan.md",
+        "debugging": "06-debugging.md",
+        "review-refactoring": "07-review-refactoring.md",
+        "stack-selector": "08-stack-selector.md",
+        "bootstrap-project": "09-bootstrap-project.md"
+      }
+    },
+    "ui-ux": {
+      "name": "UI/UX Knowledge Base",
+      "description": "Hasil riset mendalam terhadap 45+ sumber referensi UI/UX",
+      "path": "~/ui-ux-knowledge-base",
+      "indexFile": "~/ui-ux-knowledge-base/README.md",
+      "files": {
+        "fondasi-guidelines": "01-fondasi-guidelines.md",
+        "design-systems": "02-design-systems.md",
+        "pattern-evidence": "03-pattern-evidence.md",
+        "psikologi-case-studies": "04-psikologi-case-studies.md",
+        "tools-resources": "05-tools-resources.md",
+        "komunitas-tren": "06-komunitas-tren.md",
+        "playbook": "07-playbook.md",
+        "icons-logos-motion": "08-icons-logos-motion.md",
+        "m3-material-deepdive": "09-m3-material-deepdive.md",
+        "komponen-modern-web": "10-komponen-modern-web.md",
+        "agent-skills-distinct-efficient": "11-agent-skills-distinct-efficient.md",
+        "laws-psikologi-ux": "12-laws-psikologi-ux.md",
+        "craft-ui-taktis": "13-craft-ui-taktis.md",
+        "aksesibilitas-pola": "14-aksesibilitas-pola.md",
+        "ecommerce-konversi": "15-ecommerce-konversi.md",
+        "desain-produk-ai": "16-desain-produk-ai.md",
+        "galeri-inspirasi-web": "17-galeri-inspirasi-web.md"
+      }
+    }
+  },
+
+  // Project Context
+  "projectContext": {
+    "coffeeTongkrong": {
+      "name": "Coffee Tongkrong",
+      "path": "~/coffee-tongkrong",
+      "handoffFiles": {
+        "main": "~/coffee-tongkrong/HANDOFF.md",
+        "backend": "~/coffee-tongkrong/HANDOFF-BACKEND.md",
+        "coding": "~/coffee-tongkrong/HANDOFF-CODING.md"
+      },
+      "agentsFile": "~/coffee-tongkrong/AGENTS.md",
+      "tokensFile": "~/coffee-tongkrong/tokens.css",
+      "uiFiles": {
+        "login": "~/coffee-tongkrong/login.html",
+        "demo": "~/coffee-tongkrong/demo.html"
+      }
+    }
+  },
+
+  // Workflow Configuration
+  "workflow": {
+    "coding": {
+      "phases": ["PAHAM", "RENCANA", "EKSEKUSI", "VERIFIKASI"],
+      "verificationProtocol": "Agans",
+      "minimalLadder": [
+        "Perlu dibuat sama sekali? (YAGNI)",
+        "Sudah ada di codebase? → reuse",
+        "Stdlib bahasa bisa? → pakai",
+        "Fitur native platform/framework?",
+        "Dependency yang sudah terpasang bisa?",
+        "Perubahan minimum yang bekerja"
+      ]
+    },
+    "ui-ux": {
+      "reviewChecklist": [
+        "Visual hierarchy",
+        "Layout & spacing",
+        "Typography",
+        "Color & contrast",
+        "Accessibility",
+        "Interaction patterns",
+        "Copy"
+      ],
+      "designTokens": {
+        "source": "~/coffee-tongkrong/tokens.css",
+        "format": "CSS variables"
+      }
+    }
+  },
+
+  // Communication Style
+  "communication": {
+    "language": "Indonesian",
+    "style": "concise and direct",
+    "codeStyle": "professional",
+    "citations": "always cite KB files when making recommendations"
+  }
+}

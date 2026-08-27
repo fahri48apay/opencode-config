@@ -1,0 +1,73 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "penpot": {
+      "type": "remote",
+      "url": "https://design.penpot.app/mcp/stream?userToken={env:PENPOT_TOKEN}",
+      "enabled": true
+    }
+  },
+  "agents": {
+    "coding": {
+      "name": "Senior Polyglot Software Engineer",
+      "description": "Senior polyglot software engineer. Writes, debugs, and reviews code in any language; refactors; sets up new projects; handles git workflow and testing.",
+      "mode": "all",
+      "instructions": ["~/opencode-config/config/agent/coding.md"],
+      "knowledgeBase": ["~/coding-knowledge-base/README.md"]
+    },
+    "ui-ux": {
+      "name": "Senior UI/UX Designer",
+      "description": "Senior UI/UX designer agent. Reviews and critiques designs, generates UI code (HTML/CSS/Tailwind/React), builds design systems, and answers UX questions.",
+      "mode": "all",
+      "instructions": ["~/opencode-config/config/agent/ui-ux.md"],
+      "knowledgeBase": ["~/ui-ux-knowledge-base/README.md"]
+    }
+  },
+  "skills": {
+    "brainstorming": "~/opencode-config/skills/brainstorming/SKILL.md",
+    "writing-plans": "~/opencode-config/skills/writing-plans/SKILL.md",
+    "executing-plans": "~/opencode-config/skills/executing-plans/SKILL.md",
+    "test-driven-development": "~/opencode-config/skills/test-driven-development/SKILL.md",
+    "verification-before-completion": "~/opencode-config/skills/verification-before-completion/SKILL.md",
+    "requesting-code-review": "~/opencode-config/skills/requesting-code-review/SKILL.md",
+    "systematic-debugging": "~/opencode-config/skills/systematic-debugging/SKILL.md",
+    "finishing-a-development-branch": "~/opencode-config/skills/finishing-a-development-branch/SKILL.md",
+    "using-git-worktrees": "~/opencode-config/skills/using-git-worktrees/SKILL.md",
+    "frontend-design": "~/opencode-config/skills/frontend-design/SKILL.md",
+    "ui-ux-pro-max": "~/opencode-config/skills/ui-ux-pro-max/SKILL.md",
+    "impeccable": "~/opencode-config/skills/impeccable/SKILL.md",
+    "emil-design-eng": "~/opencode-config/skills/emil-design-eng/SKILL.md",
+    "ui-design": "~/opencode-config/skills/ui-design/SKILL.md",
+    "ui-radar": "~/opencode-config/skills/ui-radar/SKILL.md",
+    "anti-ui-slop": "~/opencode-config/skills/anti-ui-slop/SKILL.md",
+    "extract-design-system": "~/opencode-config/skills/extract-design-system/SKILL.md",
+    "sleek-design-mobile-apps": "~/opencode-config/skills/sleek-design-mobile-apps/SKILL.md",
+    "web-design-guidelines": "~/opencode-config/skills/web-design-guidelines/SKILL.md",
+    "playwright-best-practices": "~/opencode-config/skills/playwright-best-practices/SKILL.md",
+    "playwright-cli": "~/opencode-config/skills/playwright-cli/SKILL.md",
+    "webapp-testing": "~/opencode-config/skills/webapp-testing/SKILL.md",
+    "improve-codebase-architecture": "~/opencode-config/skills/improve-codebase-architecture/SKILL.md",
+    "vercel-react-best-practices": "~/opencode-config/skills/vercel-react-best-practices/SKILL.md",
+    "vercel-react-native-skills": "~/opencode-config/skills/vercel-react-native-skills/SKILL.md",
+    "skill-creator": "~/opencode-config/skills/skill-creator/SKILL.md",
+    "find-skills": "~/opencode-config/skills/find-skills/SKILL.md",
+    "ralph-wiggum": "~/opencode-config/skills/ralph-wiggum/SKILL.md",
+    "coffee-tongkrong-coding": "~/.agents/skills/coffee-tongkrong-coding/SKILL.md",
+    "coffee-tongkrong-ui-ux": "~/.agents/skills/coffee-tongkrong-ui-ux/SKILL.md",
+    "supabase": "~/.agents/skills/supabase/SKILL.md",
+    "supabase-postgres-best-practices": "~/.agents/skills/supabase-postgres-best-practices/SKILL.md",
+    "hf-cli": "~/.agents/skills/hf-cli/SKILL.md"
+  },
+  "knowledgeBase": {
+    "coding": "~/coding-knowledge-base/README.md",
+    "ui-ux": "~/ui-ux-knowledge-base/README.md"
+  },
+  "projectContext": {
+    "coffeeTongkrong": {
+      "path": "~/coffee-tongkrong",
+      "handoff": "~/coffee-tongkrong/HANDOFF.md",
+      "tokens": "~/coffee-tongkrong/tokens.css",
+      "agents": "~/coffee-tongkrong/AGENTS.md"
+    }
+  }
+}
