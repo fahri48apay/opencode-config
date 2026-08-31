@@ -1,5 +1,22 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "model": "openrouter/qwen3.6-plus:free",
+  "provider": {
+    "omniroute": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OmniRoute",
+      "options": {
+        "baseURL": "http://localhost:20128/v1",
+        "apiKey": "sk_omniroute"
+      },
+      "models": {
+        "auto/best-coding": { "name": "Auto Best Coding" },
+        "auto/best-reasoning": { "name": "Auto Best Reasoning" },
+        "auto/best-fast": { "name": "Auto Best Fast" },
+        "auto/best-vision": { "name": "Auto Best Vision" }
+      }
+    }
+  },
   "mcp": {
     "penpot": {
       "type": "remote",

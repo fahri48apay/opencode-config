@@ -26,6 +26,7 @@ do_pull() {
 do_push() {
   copy_into "$CONFIG_DIR/agent" "$REPO_DIR/config/agent"
   cp -a "$CONFIG_DIR/opencode.jsonc" "$REPO_DIR/config/opencode.jsonc"
+  [ -f "$CONFIG_DIR/tui.json" ] && cp -a "$CONFIG_DIR/tui.json" "$REPO_DIR/config/tui.json"
   rm -rf "$REPO_DIR/skills";      copy_into "$AGENTS_SKILLS"       "$REPO_DIR/skills"
   rm -rf "$REPO_DIR/skills-local"; copy_into "$CONFIG_DIR/skills"  "$REPO_DIR/skills-local"
   git -C "$REPO_DIR" add -A
@@ -44,6 +45,7 @@ do_status() {
   echo "-- Beda repo vs live (ringkas):"
   local diffs=0
   for pair in "$REPO_DIR/config/opencode.jsonc:$CONFIG_DIR/opencode.jsonc" \
+              "$REPO_DIR/config/tui.json:$CONFIG_DIR/tui.json" \
               "$REPO_DIR/config/agent:$CONFIG_DIR/agent" \
               "$REPO_DIR/skills:$AGENTS_SKILLS" \
               "$REPO_DIR/skills-local:$CONFIG_DIR/skills"; do
