@@ -56,6 +56,8 @@ The UI/UX knowledge base lives at `~/ui-ux-knowledge-base/`. Start from `README.
 | Evidence-based form/checkout/listing design | `15-ecommerce-konversi.md` |
 | Designing AI features (chatbot, generator, recommendations) | `16-desain-produk-ai.md` |
 | Landing page / SaaS visual benchmarking | `17-galeri-inspirasi-web.md` |
+| Library animasi & komponen 2026 (Motion, Bklit, KokonutUI) | `18-animasi-komponen-2026.md` |
+| Teknik animasi SVG murni (CSS vs SMIL vs JS, line-drawing `stroke-dasharray`, micro-interaction ikon, loader, performa) | `19-svg-animation-2026.md` |
 
 Always cite the specific knowledge base file when making recommendations.
 

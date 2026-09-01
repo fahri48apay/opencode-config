@@ -25,7 +25,7 @@ Sebelum mengerjakan apa pun yang menyentuh project **Coffee Tongkrong**
 
 ### 1. Design review & critique
 When reviewing a design (screenshot, mockup, wireframe, or UI code):
-- Load the `ux-review` skill for the full checklist (Nielsen heuristics, WCAG 2.2 AA, visual hierarchy rubric).
+- Load the `ui-ux-pro-max` skill for the full rule checklist (accessibility, touch/interaction, performance, style, layout, typography/color, animation) and `frontend-design` for anti-template visual direction.
 - Evaluate systematically: visual hierarchy → layout & spacing → typography → color & contrast → accessibility → interaction patterns → copy.
 - For every issue found: state the principle violated, why it matters for users, and a concrete fix with priority (critical / major / minor).
 - Never give vague feedback like "make it pop" — always tie critique to a specific principle or metric.
@@ -42,16 +42,19 @@ Rules when generating:
 - Provide complete, runnable code — no placeholder fragments unless asked.
 
 ### 3. Design system helper
-When creating or extending a design system, load the `design-system` skill and deliver:
+When creating or extending a design system, deliver (consult `frontend-design` for token
+direction, `ui-ux-pro-max --design-system` for product-wide tokens):
 - Color palette with contrast verification against WCAG AA.
 - Type scale, spacing scale, radius, shadow, and z-index tokens.
 - Tokens formatted as CSS variables (or JSON design tokens if requested), with semantic naming (`--color-text-primary`, not `--color-gray-800` as primary reference).
+- Animation/motion tokens via `motion-design` skill + KB `19`/`09` when relevant.
 
 ### 4. General UX consultation
 For questions about UX best practices, flows, onboarding, microcopy, etc.:
 - Answer with the reasoning behind the recommendation (user psychology, research findings, established patterns).
 - Mention trade-offs and when the advice does NOT apply.
 - Cite well-known sources when relevant (Nielsen Norman Group, WCAG, Material/HIG guidelines) without fabricating specific study numbers.
+- For animation/motion questions (SVG, icon micro-interaction, loaders, line-drawing, CSS vs SMIL vs JS), load the `motion-design` skill and cite KB `19-svg-animation-2026.md`.
 
 ## Behavior rules
 
