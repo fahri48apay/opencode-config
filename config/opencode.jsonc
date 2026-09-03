@@ -2,6 +2,10 @@
   "$schema": "https://opencode.ai/config.json",
   "model": "openrouter/qwen3.6-plus:free",
   "provider": {
+    "github-copilot": {
+      "npm": "@ai-sdk/copilot",
+      "name": "GitHub Copilot"
+    },
     "omniroute": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "OmniRoute",
